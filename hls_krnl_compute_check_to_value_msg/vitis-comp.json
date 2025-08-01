@@ -1,0 +1,13 @@
+{
+  "name": "hls_krnl_compute_check_to_value_msg",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": [
+      "hls_config.cfg"
+    ],
+    "work_dir": "compute_check_to_value"
+  },
+  "useSysrootToolchain": false,
+  "template": "empty_hls_component"
+}
