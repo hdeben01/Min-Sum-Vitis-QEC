@@ -1,0 +1,41 @@
+  **** HLS Build v2025.1 6135595
+INFO: [HLS 200-2005] Using work_dir /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/compute_check_to_value 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/compute_check_to_value/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component '/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/compute_check_to_value'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../hls_krnl_compute_check_to_value_msg.cpp' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file '/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../compute_check_to_value_msg.h' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding design file '/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/compute_check_to_value_msg.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=../hls_tb_compute_check_to_value_msg.cpp' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/hls_config.cfg(10)
+INFO: [HLS 200-10] Adding test bench file '/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_tb_compute_check_to_value_msg.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.top=compute_check_to_value' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/hls_config.cfg(7)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vitis' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1465] Applying config ini 'part=xczu7ev-ffvc1156-2-e' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1465] Applying config ini 'clock=100Mhz' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/hls_config.cfg(11)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1465] Applying config ini 'clock_uncertainty=27%' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/hls_config.cfg(12)
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 2.7ns.
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=rtl' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/hls_config.cfg(5)
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/compute_check_to_value/vitis-comp.json
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../../hls_tb_compute_check_to_value_msg.cpp in debug mode
+   Compiling ../../../../../hls_krnl_compute_check_to_value_msg.cpp in debug mode
+   Generating csim.exe
+Error abriendo el archivo: No such file or directory
+@E Simulation failed: Function 'main' returns nonzero value '1'.
+ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+ERROR: 4
+INFO: [HLS 200-112] Total CPU user time: 2.09 seconds. Total CPU system time: 0.75 seconds. Total elapsed time: 3.5 seconds; peak allocated memory: 264.141 MB.

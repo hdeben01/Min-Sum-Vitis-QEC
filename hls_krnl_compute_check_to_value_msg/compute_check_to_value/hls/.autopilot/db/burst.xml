@@ -1,0 +1,6 @@
+<VitisHLS:BurstInfo>
+    <burst group="BURST_VERBOSE_MISSED" fe_name="CouldNotAnalyzeBoundsPatternMissed" src_info="../hls_krnl_compute_check_to_value_msg.cpp:21:26" msg_id="214-252" msg_severity="INFO" msg_body="Could not analyze the loop bounds" resolution="214-252" LoopLoc="../hls_krnl_compute_check_to_value_msg.cpp:21:26" LoopName="VITIS_LOOP_21_2" ParentFunc="compute_check_to_value(float (*) [40], int*, float (*) [40], int, int)"/>
+    <burst group="BURST_VERBOSE_MISSED" fe_name="CouldNotAnalyzeBoundsPatternMissed" src_info="../hls_krnl_compute_check_to_value_msg.cpp:36:26" msg_id="214-252" msg_severity="INFO" msg_body="Could not analyze the loop bounds" resolution="214-252" LoopLoc="../hls_krnl_compute_check_to_value_msg.cpp:36:26" LoopName="VITIS_LOOP_36_3" ParentFunc="compute_check_to_value(float (*) [40], int*, float (*) [40], int, int)"/>
+    <burst group="BURST_VERBOSE_MISSED" fe_name="CouldNotAnalyzeBoundsPatternMissed" src_info="../hls_krnl_compute_check_to_value_msg.cpp:12:19" msg_id="214-252" msg_severity="INFO" msg_body="Could not analyze the loop bounds" resolution="214-252" LoopLoc="../hls_krnl_compute_check_to_value_msg.cpp:12:19" LoopName="VITIS_LOOP_12_1" ParentFunc="compute_check_to_value(float (*) [40], int*, float (*) [40], int, int)"/>
+</VitisHLS:BurstInfo>
+

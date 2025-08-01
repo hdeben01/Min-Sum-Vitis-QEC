@@ -1,0 +1,65 @@
+{
+    "0": {
+        "name": "compute_check_to_value",
+        "file": "hls_krnl_compute_check_to_value_msg.cpp",
+        "fileloc": "7",
+        "instructions": "68",
+        "total_instructions": "221",
+        "calls": "1 2",
+        "basicblocks": "4",
+        "memory_accesses": "0",
+        "control_depth": "0",
+        "def_use_depth": "2",
+        "loads": {
+            "L": "5"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "1": {
+        "name": "compute_check_to_value_Pipeline_VITIS_LOOP_21_2",
+        "file": "..\/hls_krnl_compute_check_to_value_msg.cpp",
+        "fileloc": "16",
+        "instructions": "91",
+        "total_instructions": "91",
+        "calls": "",
+        "basicblocks": "3",
+        "memory_accesses": "12",
+        "control_depth": "0",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "5"
+        },
+        "stores": {
+            "L": "10"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "2": {
+        "name": "compute_check_to_value_Pipeline_VITIS_LOOP_36_3",
+        "file": "..\/hls_krnl_compute_check_to_value_msg.cpp",
+        "fileloc": "36",
+        "instructions": "62",
+        "total_instructions": "62",
+        "calls": "",
+        "basicblocks": "4",
+        "memory_accesses": "7",
+        "control_depth": "1",
+        "def_use_depth": "1",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+---
+MainSourceFile:  /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/compute_check_to_value/hls/.autopilot/db/hls_krnl_compute_check_to_value_msg.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_12_1:  '
+    FileOffset:      12
+    FilePath:        /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg.cpp
+    Replacements:    
+      - FilePath:        /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/compute_check_to_value/hls/.autopilot/db/hls_krnl_compute_check_to_value_msg.pp.0.cpp
+        Offset:          215097
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_12_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_21_2:  '
+    FileOffset:      21
+    FilePath:        /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg.cpp
+    Replacements:    
+      - FilePath:        /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/compute_check_to_value/hls/.autopilot/db/hls_krnl_compute_check_to_value_msg.pp.0.cpp
+        Offset:          215351
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_21_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_36_3:  '
+    FileOffset:      36
+    FilePath:        /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg.cpp
+    Replacements:    
+      - FilePath:        /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/compute_check_to_value/hls/.autopilot/db/hls_krnl_compute_check_to_value_msg.pp.0.cpp
+        Offset:          215878
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_36_3: '
+...

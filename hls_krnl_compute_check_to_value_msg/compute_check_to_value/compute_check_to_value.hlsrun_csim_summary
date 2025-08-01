@@ -1,0 +1,158 @@
+<ENTRY>
+{
+ "thisFile": "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/compute_check_to_value/compute_check_to_value.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Aug  1 19:59:45 2025",
+ "timestampMillis": "1754071185349",
+ "buildStep": {
+  "cmdId": "0eaca043-99e8-4953-b920-d6a7c4f71c48",
+  "name": "vitis-run",
+  "logFile": "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/compute_check_to_value/logs/compute_check_to_value.steps.log",
+  "commandLine": "/tools/Xilinx/2025.1/Vitis/bin/unwrapped/lnx64.o/vitis-run  --mode hls --csim --config /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/hls_config.cfg --work_dir compute_check_to_value ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/hls_config.cfg",
+   "--work_dir",
+   "compute_check_to_value"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Aug  1 19:59:45 2025",
+ "timestampMillis": "1754071185350",
+ "status": {
+  "cmdId": "0eaca043-99e8-4953-b920-d6a7c4f71c48",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Aug  1 19:59:49 2025",
+ "timestampMillis": "1754071189484",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "compute_check_to_value",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg.cpp",
+     "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/compute_check_to_value_msg.h",
+     "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/input.txt"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Aug  1 19:59:49 2025",
+ "timestampMillis": "1754071189485",
+ "buildStep": {
+  "cmdId": "3795cab7-ccde-432f-8b72-ebfa3cb54369",
+  "name": "",
+  "logFile": "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/compute_check_to_value/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Aug  1 19:59:49 2025",
+ "timestampMillis": "1754071189486",
+ "status": {
+  "cmdId": "3795cab7-ccde-432f-8b72-ebfa3cb54369",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Aug  1 19:59:50 2025",
+ "timestampMillis": "1754071190048",
+ "status": {
+  "cmdId": "3795cab7-ccde-432f-8b72-ebfa3cb54369",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Aug  1 19:59:50 2025",
+ "timestampMillis": "1754071190177",
+ "status": {
+  "cmdId": "0eaca043-99e8-4953-b920-d6a7c4f71c48",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Aug  1 19:59:50 2025",
+ "timestampMillis": "1754071190177",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Aug  1 19:59:50 2025",
+ "timestampMillis": "1754071190188",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

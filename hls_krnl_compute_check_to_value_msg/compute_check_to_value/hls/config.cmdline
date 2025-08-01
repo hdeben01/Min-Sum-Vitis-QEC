@@ -1,0 +1,3 @@
+relativeroot=/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg
+original_argv=-c --mode hls --config /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/hls_krnl_compute_check_to_value_msg/hls_config.cfg --work_dir compute_check_to_value 
+
