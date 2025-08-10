@@ -1,0 +1,27 @@
+[
+  {
+    "directory": "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations",
+    "arguments": [
+      "/tools/Xilinx/2025.1/Vitis/vcxx/libexec/clang++",
+      "--gcc-toolchain=/tools/Xilinx/2025.1/Vitis/tps/lnx64/gcc-8.3.0",
+      "-fhls",
+      "-hls-syn-headers-dir=/tools/Xilinx/2025.1/Vitis/common/technology/autopilot",
+      "-fhlstoplevel=compute_row_operations",
+      "-c",
+      "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/../compute_row_operations.cpp"
+    ],
+    "file": "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/../compute_row_operations.cpp"
+  },
+  {
+    "directory": "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations",
+    "arguments": [
+      "/tools/Xilinx/2025.1/Vitis/vcxx/libexec/clang++",
+      "--gcc-toolchain=/tools/Xilinx/2025.1/Vitis/tps/lnx64/gcc-8.3.0",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=/tools/Xilinx/2025.1/Vitis/include",
+      "-c",
+      "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/../compute_row_operations_tb.cpp"
+    ],
+    "file": "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/../compute_row_operations_tb.cpp"
+  }
+]

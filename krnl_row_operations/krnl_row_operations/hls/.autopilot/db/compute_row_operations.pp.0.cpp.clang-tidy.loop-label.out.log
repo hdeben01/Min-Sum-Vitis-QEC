@@ -1,0 +1,195 @@
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:9662:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:9662:5: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:9676:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:9676:5: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:9690:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:9690:5: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:11658:7: warning: Added loop label VITIS_LOOP_1248_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1248_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:11658:7: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32147:5: warning: Added loop label VITIS_LOOP_133_1:   [xilinx-label-all-loops]
+    for (size_t i = 0; i < N; ++i) {
+    ^~~
+    VITIS_LOOP_133_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32147:5: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32163:5: warning: Added loop label VITIS_LOOP_149_1:   [xilinx-label-all-loops]
+    for (size_t i = 0; i < N; ++i) {
+    ^~~
+    VITIS_LOOP_149_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32163:5: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32179:75: warning: Added loop label VITIS_LOOP_175_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator ++() { pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                          ^~~
+                                                                          VITIS_LOOP_175_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32179:75: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32184:75: warning: Added loop label VITIS_LOOP_176_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator --() { pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                          ^~~
+                                                                          VITIS_LOOP_176_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32184:75: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32193:106: warning: Added loop label VITIS_LOOP_204_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator +=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                         ^~~
+                                                                                                         VITIS_LOOP_204_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32193:106: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32198:106: warning: Added loop label VITIS_LOOP_205_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator -=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                         ^~~
+                                                                                                         VITIS_LOOP_205_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32198:106: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32203:106: warning: Added loop label VITIS_LOOP_206_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator *=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                         ^~~
+                                                                                                         VITIS_LOOP_206_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32203:106: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32208:106: warning: Added loop label VITIS_LOOP_207_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator /=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                         ^~~
+                                                                                                         VITIS_LOOP_207_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32208:106: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32213:106: warning: Added loop label VITIS_LOOP_208_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator %=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                         ^~~
+                                                                                                         VITIS_LOOP_208_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32213:106: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32218:106: warning: Added loop label VITIS_LOOP_209_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator &=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                         ^~~
+                                                                                                         VITIS_LOOP_209_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32218:106: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32223:106: warning: Added loop label VITIS_LOOP_210_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator |=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                         ^~~
+                                                                                                         VITIS_LOOP_210_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32223:106: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32228:106: warning: Added loop label VITIS_LOOP_211_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator ^=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                         ^~~
+                                                                                                         VITIS_LOOP_211_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32228:106: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32233:107: warning: Added loop label VITIS_LOOP_212_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator <<=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                          ^~~
+                                                                                                          VITIS_LOOP_212_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32233:107: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32238:107: warning: Added loop label VITIS_LOOP_213_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) vector &operator >>=(const vector &rhs) { pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                          ^~~
+                                                                                                          VITIS_LOOP_213_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32238:107: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32244:91: warning: Added loop label VITIS_LOOP_228_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) T reduce_add() const { pragma(); T res = data[0]; for (size_t i = 1; i < N; ++i) {
+                                                                                          ^~~
+                                                                                          VITIS_LOOP_228_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32244:91: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32249:92: warning: Added loop label VITIS_LOOP_229_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) T reduce_mult() const { pragma(); T res = data[0]; for (size_t i = 1; i < N; ++i) {
+                                                                                           ^~~
+                                                                                           VITIS_LOOP_229_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32249:92: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32254:91: warning: Added loop label VITIS_LOOP_230_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) T reduce_and() const { pragma(); T res = data[0]; for (size_t i = 1; i < N; ++i) {
+                                                                                          ^~~
+                                                                                          VITIS_LOOP_230_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32254:91: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32259:90: warning: Added loop label VITIS_LOOP_231_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) T reduce_or() const { pragma(); T res = data[0]; for (size_t i = 1; i < N; ++i) {
+                                                                                         ^~~
+                                                                                         VITIS_LOOP_231_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32259:90: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32264:91: warning: Added loop label VITIS_LOOP_232_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) T reduce_xor() const { pragma(); T res = data[0]; for (size_t i = 1; i < N; ++i) {
+                                                                                          ^~~
+                                                                                          VITIS_LOOP_232_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32264:91: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32270:132: warning: Added loop label VITIS_LOOP_262_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) friend bool operator <(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                                   ^~~
+                                                                                                                                   VITIS_LOOP_262_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32270:132: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32275:133: warning: Added loop label VITIS_LOOP_263_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) friend bool operator <=(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                                    ^~~
+                                                                                                                                    VITIS_LOOP_263_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32275:133: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32280:133: warning: Added loop label VITIS_LOOP_264_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) friend bool operator ==(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                                    ^~~
+                                                                                                                                    VITIS_LOOP_264_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32280:133: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32285:133: warning: Added loop label VITIS_LOOP_265_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) friend bool operator !=(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                                    ^~~
+                                                                                                                                    VITIS_LOOP_265_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32285:133: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32290:133: warning: Added loop label VITIS_LOOP_266_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) friend bool operator >=(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                                    ^~~
+                                                                                                                                    VITIS_LOOP_266_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32290:133: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32295:132: warning: Added loop label VITIS_LOOP_267_1:   [xilinx-label-all-loops]
+  inline __attribute__((always_inline)) friend bool operator >(const vector &lhs, const vector &rhs) { lhs.pragma(); rhs.pragma(); for (size_t i = 0; i < N; ++i) {
+                                                                                                                                   ^~~
+                                                                                                                                   VITIS_LOOP_267_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32295:132: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32340:5: warning: Added loop label VITIS_LOOP_15_1:   [xilinx-label-all-loops]
+    for(int i = 0; i < 3; i++){
+    ^~~
+    VITIS_LOOP_15_1: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32340:5: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32342:9: warning: Added loop label VITIS_LOOP_17_2:   [xilinx-label-all-loops]
+        for(int j = 0; j < 10; j++){
+        ^~~
+        VITIS_LOOP_17_2: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32342:9: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32348:5: warning: Added loop label VITIS_LOOP_23_3:   [xilinx-label-all-loops]
+    for(int i = 0; i < 3; i++){
+    ^~~
+    VITIS_LOOP_23_3: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32348:5: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32350:9: warning: Added loop label VITIS_LOOP_25_4:   [xilinx-label-all-loops]
+        for(int j = 0; j < 10; j++){
+        ^~~
+        VITIS_LOOP_25_4: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32350:9: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32356:5: warning: Added loop label VITIS_LOOP_31_5:   [xilinx-label-all-loops]
+    for(int i = 0; i < 3; i++){
+    ^~~
+    VITIS_LOOP_31_5: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32356:5: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32362:5: warning: Added loop label VITIS_LOOP_37_6:   [xilinx-label-all-loops]
+    for(int i = 0; i < 3; i++){
+    ^~~
+    VITIS_LOOP_37_6: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32362:5: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32373:9: warning: Added loop label VITIS_LOOP_48_7:   [xilinx-label-all-loops]
+        for(int j = 0; j < 10; j++){
+        ^~~
+        VITIS_LOOP_48_7: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32373:9: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32394:9: warning: Added loop label VITIS_LOOP_69_8:   [xilinx-label-all-loops]
+        for(int j = 0; j < 10; j++){
+        ^~~
+        VITIS_LOOP_69_8: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32394:9: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32412:5: warning: Added loop label VITIS_LOOP_87_9:   [xilinx-label-all-loops]
+    for(int i = 0; i < 3; i++){
+    ^~~
+    VITIS_LOOP_87_9: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32412:5: note: FIX-IT applied suggested code changes
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32414:9: warning: Added loop label VITIS_LOOP_89_10:   [xilinx-label-all-loops]
+        for(int j = 0; j < 10; j++){
+        ^~~
+        VITIS_LOOP_89_10: 
+/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/.autopilot/db/compute_row_operations.pp.0.cpp:32414:9: note: FIX-IT applied suggested code changes

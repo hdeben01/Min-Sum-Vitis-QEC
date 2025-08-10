@@ -1,0 +1,157 @@
+<ENTRY>
+{
+ "thisFile": "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/krnl_row_operations.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sun Aug 10 20:37:24 2025",
+ "timestampMillis": "1754851044858",
+ "buildStep": {
+  "cmdId": "66087e05-2e46-4e9d-b64e-e100fa941dbf",
+  "name": "vitis-run",
+  "logFile": "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/logs/krnl_row_operations.steps.log",
+  "commandLine": "/tools/Xilinx/2025.1/Vitis/bin/unwrapped/lnx64.o/vitis-run  --mode hls --csim --config /home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/hls_config.cfg --work_dir krnl_row_operations ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/hls_config.cfg",
+   "--work_dir",
+   "krnl_row_operations"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Aug 10 20:37:24 2025",
+ "timestampMillis": "1754851044859",
+ "status": {
+  "cmdId": "66087e05-2e46-4e9d-b64e-e100fa941dbf",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Sun Aug 10 20:37:28 2025",
+ "timestampMillis": "1754851048467",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "compute_row_operations",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/compute_row_operations.cpp",
+     "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/compute_row_operations.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sun Aug 10 20:37:28 2025",
+ "timestampMillis": "1754851048468",
+ "buildStep": {
+  "cmdId": "b55cff1c-cac5-48e2-94e5-5faf3e3e1bbe",
+  "name": "",
+  "logFile": "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations/krnl_row_operations/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/hugo/Road-To-TFG/HLS_Programming_FPGA/VitisWorkspace/krnl_row_operations"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Aug 10 20:37:28 2025",
+ "timestampMillis": "1754851048468",
+ "status": {
+  "cmdId": "b55cff1c-cac5-48e2-94e5-5faf3e3e1bbe",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Aug 10 20:37:28 2025",
+ "timestampMillis": "1754851048732",
+ "status": {
+  "cmdId": "b55cff1c-cac5-48e2-94e5-5faf3e3e1bbe",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Aug 10 20:37:28 2025",
+ "timestampMillis": "1754851048859",
+ "status": {
+  "cmdId": "66087e05-2e46-4e9d-b64e-e100fa941dbf",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Aug 10 20:37:28 2025",
+ "timestampMillis": "1754851048859",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Aug 10 20:37:28 2025",
+ "timestampMillis": "1754851048860",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

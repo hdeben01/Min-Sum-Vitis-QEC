@@ -1,0 +1,253 @@
+  **** HLS Build v2025.1 6135595
+INFO: [HLS 200-2005] Using work_dir /home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations 
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component '/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file /home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../compute_row_operations.cpp' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file '/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/compute_row_operations.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=../compute_row_operations.h' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file '/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/compute_row_operations.h' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=../compute_row_operations_tb.cpp' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding test bench file '/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/compute_row_operations_tb.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=../input_row_ops.txt' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/hls_config.cfg(12)
+INFO: [HLS 200-10] Adding test bench file '/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/input_row_ops.txt' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.top=compute_row_operations' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/hls_config.cfg(13)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vitis' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1465] Applying config ini 'part=xczu7ev-ffvc1156-2-e' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1465] Applying config ini 'clock=100MHz' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/hls_config.cfg(9)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1465] Applying config ini 'clock_uncertainty=27%' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/hls_config.cfg(10)
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 2.7ns.
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=rtl' from /home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/hls_config.cfg(5)
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/vitis-comp.json
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 2.14 seconds. CPU system time: 0.46 seconds. Elapsed time: 2.63 seconds; current allocated memory: 264.207 MB.
+INFO: [HLS 200-10] Analyzing design file '../compute_row_operations.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.22 seconds. CPU system time: 0.57 seconds. Elapsed time: 5.22 seconds; current allocated memory: 266.324 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 200-1995] There were 1,606 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 244 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 186 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 185 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 156 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 158 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 158 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 161 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 167 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 202 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 206 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 769 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,046 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 831 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 1,030 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 964 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (/home/hugo/Road-To-TFG/HLS_Programming_FPGA/TestWorkspace/krnl_row_operations/krnl_row_operations/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::data() const' into 'fp_struct<float>::to_float() const' (/wrk/ci/prod/2025.1/hls_product/continuous/640/2025.1/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:322:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::to_float() const' into 'fp_struct<float>::to_ieee() const' (/wrk/ci/prod/2025.1/hls_product/continuous/640/2025.1/src/shared/hls/clib/src/hls/utils/x_hls_utils.h:346:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'float generic_copysign<float>(float, float)' (/wrk/ci/prod/2025.1/hls_product/continuous/640/2025.1/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_copysign.h:10:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::to_ieee() const' into 'float generic_copysign<float>(float, float)' (/wrk/ci/prod/2025.1/hls_product/continuous/640/2025.1/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_copysign.h:10:0)
+INFO: [HLS 214-178] Inlining function 'float generic_copysign<float>(float, float)' into 'float generic_fabs<float>(float)' (/wrk/ci/prod/2025.1/hls_product/continuous/640/2025.1/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_fabs.h:12:0)
+INFO: [HLS 214-178] Inlining function 'float generic_fabs<float>(float)' into 'fabsf' (/wrk/ci/prod/2025.1/hls_product/continuous/640/2025.1/src/shared/hls/clib/hlsmath/src/c/fabsfloat.cpp:7:0)
+INFO: [HLS 214-178] Inlining function 'fabsf' into 'std::fabs(float)' (/tools/Xilinx/2025.1/Vitis/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath:242:0)
+INFO: [HLS 214-241] Aggregating maxi variable 'non_zero' with compact=none mode in 8-bits (../compute_row_operations.cpp:7:0)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_12_1> at ../compute_row_operations.cpp:12:22 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_22_4> at ../compute_row_operations.cpp:22:26 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_28_5> at ../compute_row_operations.cpp:28:22 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_34_6> at ../compute_row_operations.cpp:34:22 
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_45_7' is marked as complete unroll implied by the pipeline pragma (../compute_row_operations.cpp:45:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_66_8' is marked as complete unroll implied by the pipeline pragma (../compute_row_operations.cpp:66:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_14_2' is marked as complete unroll implied by the pipeline pragma (../compute_row_operations.cpp:14:26)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_45_7' (../compute_row_operations.cpp:45:26) in function 'compute_row_operations' completely with a factor of 10 (../compute_row_operations.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_66_8' (../compute_row_operations.cpp:66:26) in function 'compute_row_operations' completely with a factor of 10 (../compute_row_operations.cpp:7:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_14_2' (../compute_row_operations.cpp:14:26) in function 'compute_row_operations' completely with a factor of 10 (../compute_row_operations.cpp:7:0)
+INFO: [HLS 214-449] Automatically partitioning array 'L_cache' dimension 2 completely based on constant index. (../compute_row_operations.cpp:8:11)
+INFO: [HLS 214-421] Automatically partitioning small array 'syndrome_cache' completely based on array size. (../compute_row_operations.cpp:10:11)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=2' for array 'L_cache' due to pipeline pragma (../compute_row_operations.cpp:8:11)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'syndrome_cache' due to pipeline pragma (../compute_row_operations.cpp:10:11)
+INFO: [HLS 214-248] Applying array_partition to 'L_cache': Complete partitioning on dimension 2. (../compute_row_operations.cpp:8:11)
+INFO: [HLS 214-248] Applying array_partition to 'syndrome_cache': Complete partitioning on dimension 1. (../compute_row_operations.cpp:10:11)
+WARNING: [HLS 214-414] Cannot apply interface mode 'ap_none' on function argument 'L' since this interface mode only supports scalar types (../compute_row_operations.cpp:7:0)
+WARNING: [HLS 214-414] Cannot apply interface mode 'ap_none' on function argument 'non_zero' since this interface mode only supports scalar types (../compute_row_operations.cpp:7:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.37 seconds. CPU system time: 0.57 seconds. Elapsed time: 8.37 seconds; current allocated memory: 268.898 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 268.898 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 270.812 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 271.344 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../compute_row_operations.cpp:48:25) to (../compute_row_operations.cpp:46:16) in function 'compute_row_operations'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../compute_row_operations.cpp:48:25) to (../compute_row_operations.cpp:46:16) in function 'compute_row_operations'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../compute_row_operations.cpp:48:25) to (../compute_row_operations.cpp:46:16) in function 'compute_row_operations'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../compute_row_operations.cpp:48:25) to (../compute_row_operations.cpp:46:16) in function 'compute_row_operations'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../compute_row_operations.cpp:48:25) to (../compute_row_operations.cpp:46:16) in function 'compute_row_operations'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../compute_row_operations.cpp:48:25) to (../compute_row_operations.cpp:46:16) in function 'compute_row_operations'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../compute_row_operations.cpp:48:25) to (../compute_row_operations.cpp:46:16) in function 'compute_row_operations'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../compute_row_operations.cpp:48:25) to (../compute_row_operations.cpp:46:16) in function 'compute_row_operations'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../compute_row_operations.cpp:48:25) in function 'compute_row_operations'... converting 5 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.23 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.26 seconds; current allocated memory: 297.660 MB.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_20_3'(../compute_row_operations.cpp:20:22) and 'VITIS_LOOP_22_4'(../compute_row_operations.cpp:22:26) in function 'compute_row_operations' into perfectly nested loops.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_20_3' (../compute_row_operations.cpp:20:22) in function 'compute_row_operations'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.28 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.31 seconds; current allocated memory: 328.410 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'compute_row_operations' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_row_operations_Pipeline_VITIS_LOOP_12_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_12_1'.
+WARNING: [HLS 200-885] The II Violation in module 'compute_row_operations_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to schedule bus request operation ('gmem_load_1_req', ../compute_row_operations.cpp:15) on port 'gmem' (../compute_row_operations.cpp:15) due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'compute_row_operations_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to schedule bus request operation ('gmem_load_2_req', ../compute_row_operations.cpp:16) on port 'gmem' (../compute_row_operations.cpp:16) due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'compute_row_operations_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to schedule bus request operation ('gmem_load_3_req', ../compute_row_operations.cpp:15) on port 'gmem' (../compute_row_operations.cpp:15) due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'compute_row_operations_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to schedule bus request operation ('gmem_load_4_req', ../compute_row_operations.cpp:16) on port 'gmem' (../compute_row_operations.cpp:16) due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'compute_row_operations_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to schedule bus request operation ('gmem_load_7_req', ../compute_row_operations.cpp:15) on port 'gmem' (../compute_row_operations.cpp:15) due to limited memory ports (II = 7). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'compute_row_operations_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to schedule bus request operation ('gmem_load_9_req', ../compute_row_operations.cpp:15) on port 'gmem' (../compute_row_operations.cpp:15) due to limited memory ports (II = 9). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+WARNING: [HLS 200-885] The II Violation in module 'compute_row_operations_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to schedule bus request operation ('gmem_load_10_req', ../compute_row_operations.cpp:16) on port 'gmem' (../compute_row_operations.cpp:16) due to limited memory ports (II = 10). Please consider using a memory core with more ports or partitioning the array.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 11, Depth = 84, loop 'VITIS_LOOP_12_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.26 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.31 seconds; current allocated memory: 328.707 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 329.156 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_row_operations_Pipeline_VITIS_LOOP_20_3_VITIS_LOOP_22_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_20_3_VITIS_LOOP_22_4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 74, loop 'VITIS_LOOP_20_3_VITIS_LOOP_22_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.16 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.19 seconds; current allocated memory: 330.891 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 330.891 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_row_operations_Pipeline_VITIS_LOOP_28_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_28_5'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 74, loop 'VITIS_LOOP_28_5'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 331.652 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 331.652 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_row_operations_Pipeline_VITIS_LOOP_34_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_34_6'.
+WARNING: [HLS 200-880] The II Violation in module 'compute_row_operations_Pipeline_VITIS_LOOP_34_6' (loop 'VITIS_LOOP_34_6'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between bus response operation ('empty_29', ../compute_row_operations.cpp:82) on port 'gmem' (../compute_row_operations.cpp:82) and bus request operation ('gmem_load_13_req', ../compute_row_operations.cpp:48) on port 'gmem' (../compute_row_operations.cpp:48).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'compute_row_operations_Pipeline_VITIS_LOOP_34_6' (loop 'VITIS_LOOP_34_6'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus response operation ('empty_29', ../compute_row_operations.cpp:82) on port 'gmem' (../compute_row_operations.cpp:82) and bus request operation ('gmem_load_13_req', ../compute_row_operations.cpp:48) on port 'gmem' (../compute_row_operations.cpp:48).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'compute_row_operations_Pipeline_VITIS_LOOP_34_6' (loop 'VITIS_LOOP_34_6'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between bus response operation ('empty_29', ../compute_row_operations.cpp:82) on port 'gmem' (../compute_row_operations.cpp:82) and bus request operation ('gmem_load_13_req', ../compute_row_operations.cpp:48) on port 'gmem' (../compute_row_operations.cpp:48).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'compute_row_operations_Pipeline_VITIS_LOOP_34_6' (loop 'VITIS_LOOP_34_6'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between bus response operation ('empty_29', ../compute_row_operations.cpp:82) on port 'gmem' (../compute_row_operations.cpp:82) and bus request operation ('gmem_load_13_req', ../compute_row_operations.cpp:48) on port 'gmem' (../compute_row_operations.cpp:48).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'compute_row_operations_Pipeline_VITIS_LOOP_34_6' (loop 'VITIS_LOOP_34_6'): Unable to enforce a carried dependence constraint (II = 130, distance = 1, offset = 1) between bus response operation ('empty_29', ../compute_row_operations.cpp:82) on port 'gmem' (../compute_row_operations.cpp:82) and bus request operation ('gmem_load_13_req', ../compute_row_operations.cpp:48) on port 'gmem' (../compute_row_operations.cpp:48).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'compute_row_operations_Pipeline_VITIS_LOOP_34_6' (loop 'VITIS_LOOP_34_6'): Unable to enforce a carried dependence constraint (II = 161, distance = 1, offset = 1) between bus response operation ('empty_29', ../compute_row_operations.cpp:82) on port 'gmem' (../compute_row_operations.cpp:82) and bus request operation ('gmem_load_13_req', ../compute_row_operations.cpp:48) on port 'gmem' (../compute_row_operations.cpp:48).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'compute_row_operations_Pipeline_VITIS_LOOP_34_6' (loop 'VITIS_LOOP_34_6'): Unable to enforce a carried dependence constraint (II = 169, distance = 1, offset = 1) between bus response operation ('empty_29', ../compute_row_operations.cpp:82) on port 'gmem' (../compute_row_operations.cpp:82) and bus request operation ('gmem_load_13_req', ../compute_row_operations.cpp:48) on port 'gmem' (../compute_row_operations.cpp:48).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'compute_row_operations_Pipeline_VITIS_LOOP_34_6' (loop 'VITIS_LOOP_34_6'): Unable to enforce a carried dependence constraint (II = 173, distance = 1, offset = 1) between bus response operation ('empty_29', ../compute_row_operations.cpp:82) on port 'gmem' (../compute_row_operations.cpp:82) and bus request operation ('gmem_load_13_req', ../compute_row_operations.cpp:48) on port 'gmem' (../compute_row_operations.cpp:48).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'compute_row_operations_Pipeline_VITIS_LOOP_34_6' (loop 'VITIS_LOOP_34_6'): Unable to enforce a carried dependence constraint (II = 175, distance = 1, offset = 1) between bus response operation ('empty_29', ../compute_row_operations.cpp:82) on port 'gmem' (../compute_row_operations.cpp:82) and bus request operation ('gmem_load_13_req', ../compute_row_operations.cpp:48) on port 'gmem' (../compute_row_operations.cpp:48).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 176, Depth = 177, loop 'VITIS_LOOP_34_6'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1.14 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.26 seconds; current allocated memory: 353.969 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.6 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.63 seconds; current allocated memory: 353.969 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_row_operations' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.33 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.37 seconds; current allocated memory: 353.969 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 353.969 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_row_operations_Pipeline_VITIS_LOOP_12_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_row_operations_Pipeline_VITIS_LOOP_12_1' pipeline 'VITIS_LOOP_12_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_row_operations_Pipeline_VITIS_LOOP_12_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.32 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.35 seconds; current allocated memory: 353.969 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_row_operations_Pipeline_VITIS_LOOP_20_3_VITIS_LOOP_22_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_row_operations_Pipeline_VITIS_LOOP_20_3_VITIS_LOOP_22_4' pipeline 'VITIS_LOOP_20_3_VITIS_LOOP_22_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_row_operations_Pipeline_VITIS_LOOP_20_3_VITIS_LOOP_22_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.29 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.31 seconds; current allocated memory: 356.223 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_row_operations_Pipeline_VITIS_LOOP_28_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_row_operations_Pipeline_VITIS_LOOP_28_5' pipeline 'VITIS_LOOP_28_5' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_row_operations_Pipeline_VITIS_LOOP_28_5'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.16 seconds; current allocated memory: 359.773 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_row_operations_Pipeline_VITIS_LOOP_34_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'compute_row_operations_Pipeline_VITIS_LOOP_34_6' pipeline 'VITIS_LOOP_34_6' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fpext_32ns_64_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_1_1_1': 11 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_32_1_1': 9 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'uitofp_32ns_32_4_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_row_operations_Pipeline_VITIS_LOOP_34_6'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.66 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.73 seconds; current allocated memory: 374.395 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_row_operations' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_row_operations/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_row_operations/L' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_row_operations/non_zero' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_row_operations/syndrome' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_row_operations/size_checks' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'compute_row_operations/size_vnode' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'compute_row_operations' to 's_axilite & ap_ctrl_chain'.
+INFO: [RTGEN 206-100] Bundling port 'L', 'non_zero', 'syndrome', 'size_checks', 'size_vnode' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_row_operations'.
+INFO: [RTMG 210-278] Implementing memory 'compute_row_operations_L_cache_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'compute_row_operations_non_zero_cache_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.72 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.89 seconds; current allocated memory: 397.309 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.32 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.36 seconds; current allocated memory: 397.309 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.66 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.78 seconds; current allocated memory: 409.332 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for compute_row_operations.
+INFO: [VLOG 209-307] Generating Verilog RTL for compute_row_operations.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 130.79 MHz
+INFO: [HLS 200-112] Total CPU user time: 16.25 seconds. Total CPU system time: 1.94 seconds. Total elapsed time: 23.6 seconds; peak allocated memory: 409.332 MB.
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 28s

@@ -1,0 +1,582 @@
+
+
+================================================================
+== Synthesis Summary Report of 'compute_row_operations'
+================================================================
++ General Information: 
+    * Date:           Sun Aug 10 20:37:56 2025
+    * Version:        2025.1 (Build 6135595 on May 21 2025)
+    * Project:        krnl_row_operations
+    * Solution:       hls (Vitis Kernel Flow Target)
+    * Product family: zynquplus
+    * Target device:  xczu7ev-ffvc1156-2-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +---------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+--------+---------+------------+------------+-----+
+    |                               Modules                               | Issue|      |       Latency       | Iteration|         | Trip |          |        |         |            |            |     |
+    |                               & Loops                               | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM  |   DSP   |     FF     |     LUT    | URAM|
+    +---------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+--------+---------+------------+------------+-----+
+    |+ compute_row_operations                                             |     -|  0.00|      245|  2.450e+03|         -|      246|     -|        no|  8 (1%)|  45 (2%)|  14321 (3%)|  14958 (6%)|    -|
+    | + compute_row_operations_Pipeline_VITIS_LOOP_15_1_VITIS_LOOP_17_2   |     -|  0.00|       33|    330.000|         -|       31|     -|    rewind|       -|        -|   126 (~0%)|   198 (~0%)|    -|
+    |  o VITIS_LOOP_15_1_VITIS_LOOP_17_2                                  |     -|  7.30|       31|    310.000|         3|        1|    30|       yes|       -|        -|           -|           -|    -|
+    | + compute_row_operations_Pipeline_VITIS_LOOP_23_3_VITIS_LOOP_25_4   |     -|  0.00|       33|    330.000|         -|       31|     -|    rewind|       -|        -|    54 (~0%)|   174 (~0%)|    -|
+    |  o VITIS_LOOP_23_3_VITIS_LOOP_25_4                                  |     -|  7.30|       31|    310.000|         3|        1|    30|       yes|       -|        -|           -|           -|    -|
+    | + compute_row_operations_Pipeline_VITIS_LOOP_31_5                   |     -|  0.00|        5|     50.000|         -|        4|     -|    rewind|       -|        -|    10 (~0%)|    67 (~0%)|    -|
+    |  o VITIS_LOOP_31_5                                                  |     -|  7.30|        3|     30.000|         2|        1|     3|       yes|       -|        -|           -|           -|    -|
+    | + compute_row_operations_Pipeline_VITIS_LOOP_37_6                   |     -|  0.18|       33|    330.000|         -|        8|     -|    rewind|       -|  45 (2%)|  10015 (2%)|   9019 (3%)|    -|
+    |  o VITIS_LOOP_37_6                                                  |    II|  7.30|       31|    310.000|        28|        2|     3|       yes|       -|        -|           -|           -|    -|
+    | + compute_row_operations_Pipeline_VITIS_LOOP_87_9_VITIS_LOOP_89_10  |     -|  0.00|       34|    340.000|         -|       31|     -|    rewind|       -|        -|   446 (~0%)|   289 (~0%)|    -|
+    |  o VITIS_LOOP_87_9_VITIS_LOOP_89_10                                 |     -|  7.30|       32|    320.000|         4|        1|    30|       yes|       -|        -|           -|           -|    -|
+    +---------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+--------+---------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface   | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|             |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem0 | READ_WRITE | 32 -> 64   | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          | BRAM=4            |
+| m_axi_gmem1 | READ_ONLY  | 8 -> 16    | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          | BRAM=2            |
+| m_axi_gmem2 | READ_ONLY  | 1 -> 8     | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          | BRAM=2            |
++-------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 7             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+-------------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| Interface     | Register    | Offset | Width | Access | Description                      | Bit Fields                                                                         |
++---------------+-------------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| s_axi_control | CTRL        | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 4=AP_CONTINUE 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER        | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                                           |
+| s_axi_control | IP_IER      | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                                      |
+| s_axi_control | IP_ISR      | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                                      |
+| s_axi_control | L_1         | 0x10   | 32    | W      | Data signal of L                 |                                                                                    |
+| s_axi_control | L_2         | 0x14   | 32    | W      | Data signal of L                 |                                                                                    |
+| s_axi_control | non_zero_1  | 0x1c   | 32    | W      | Data signal of non_zero          |                                                                                    |
+| s_axi_control | non_zero_2  | 0x20   | 32    | W      | Data signal of non_zero          |                                                                                    |
+| s_axi_control | syndrome_1  | 0x28   | 32    | W      | Data signal of syndrome          |                                                                                    |
+| s_axi_control | syndrome_2  | 0x2c   | 32    | W      | Data signal of syndrome          |                                                                                    |
+| s_axi_control | size_checks | 0x34   | 32    | W      | Data signal of size_checks       |                                                                                    |
+| s_axi_control | size_vnode  | 0x3c   | 32    | W      | Data signal of size_vnode        |                                                                                    |
++---------------+-------------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+---------------+-----------+
+| Interface | Type          | Ports     |
++-----------+---------------+-----------+
+| ap_clk    | clock         | ap_clk    |
+| ap_rst_n  | reset         | ap_rst_n  |
+| interrupt | interrupt     | interrupt |
+| ap_ctrl   | ap_ctrl_chain |           |
++-----------+---------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++-------------+-----------+--------------------+
+| Argument    | Direction | Datatype           |
++-------------+-----------+--------------------+
+| L           | inout     | float*             |
+| non_zero    | in        | ap_uint<1> const * |
+| syndrome    | in        | ap_uint<1>*        |
+| size_checks | in        | int                |
+| size_vnode  | in        | int                |
++-------------+-----------+--------------------+
+
+* SW-to-HW Mapping
++-------------+---------------+-----------+----------+---------------------------------------+
+| Argument    | HW Interface  | HW Type   | HW Usage | HW Info                               |
++-------------+---------------+-----------+----------+---------------------------------------+
+| L           | m_axi_gmem0   | interface |          | channel=0                             |
+| L           | s_axi_control | register  | offset   | name=L_1 offset=0x10 range=32         |
+| L           | s_axi_control | register  | offset   | name=L_2 offset=0x14 range=32         |
+| non_zero    | m_axi_gmem1   | interface |          | channel=0                             |
+| non_zero    | s_axi_control | register  | offset   | name=non_zero_1 offset=0x1c range=32  |
+| non_zero    | s_axi_control | register  | offset   | name=non_zero_2 offset=0x20 range=32  |
+| syndrome    | m_axi_gmem2   | interface |          | channel=0                             |
+| syndrome    | s_axi_control | register  | offset   | name=syndrome_1 offset=0x28 range=32  |
+| syndrome    | s_axi_control | register  | offset   | name=syndrome_2 offset=0x2c range=32  |
+| size_checks | s_axi_control | register  |          | name=size_checks offset=0x34 range=32 |
+| size_vnode  | s_axi_control | register  |          | name=size_vnode offset=0x3c range=32  |
++-------------+---------------+-----------+----------+---------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+-----------------+-------------------------------------+
+| HW Interface | Direction | Length | Width | Loop            | Loop Location                       |
++--------------+-----------+--------+-------+-----------------+-------------------------------------+
+| m_axi_gmem0  | read      | 15     | 64    |                 |                                     |
+| m_axi_gmem0  | write     | 15     | 64    |                 |                                     |
+| m_axi_gmem1  | read      | 15     | 16    |                 |                                     |
+| m_axi_gmem2  | read      | 3      | 8     | VITIS_LOOP_31_5 | ../compute_row_operations.cpp:31:22 |
++--------------+-----------+--------+-------+-----------------+-------------------------------------+
+
+* All M_AXI Variable Accesses
++--------------+----------+-------------------------------------+-----------+--------------+--------+------------------+-------------------------------------+------------+------------------------------------------------+
+| HW Interface | Variable | Access Location                     | Direction | Burst Status | Length | Loop             | Loop Location                       | Resolution | Problem                                        |
++--------------+----------+-------------------------------------+-----------+--------------+--------+------------------+-------------------------------------+------------+------------------------------------------------+
+| m_axi_gmem0  | L        | ../compute_row_operations.cpp:18:29 | read      | Widened      | 15     | VITIS_LOOP_17_2  | ../compute_row_operations.cpp:17:26 |            |                                                |
+| m_axi_gmem0  | L        | ../compute_row_operations.cpp:18:29 | read      | Inferred     | 30     | VITIS_LOOP_15_1  | ../compute_row_operations.cpp:15:22 |            |                                                |
+| m_axi_gmem0  | L        | ../compute_row_operations.cpp:90:21 | write     | Widened      | 15     | VITIS_LOOP_89_10 | ../compute_row_operations.cpp:89:27 |            |                                                |
+| m_axi_gmem0  | L        | ../compute_row_operations.cpp:90:21 | write     | Inferred     | 30     | VITIS_LOOP_87_9  | ../compute_row_operations.cpp:87:22 |            |                                                |
+| m_axi_gmem1  | non_zero | ../compute_row_operations.cpp:27:34 | read      | Widened      | 15     | VITIS_LOOP_25_4  | ../compute_row_operations.cpp:25:26 |            |                                                |
+| m_axi_gmem1  | non_zero | ../compute_row_operations.cpp:27:34 | read      | Inferred     | 30     | VITIS_LOOP_23_3  | ../compute_row_operations.cpp:23:22 |            |                                                |
+| m_axi_gmem2  | syndrome | ../compute_row_operations.cpp:32:27 | read      | Widen Fail   |        | VITIS_LOOP_31_5  | ../compute_row_operations.cpp:31:22 | 214-234    | Sequential access length is not divisible by 2 |
+| m_axi_gmem2  | syndrome | ../compute_row_operations.cpp:32:27 | read      | Inferred     | 3      | VITIS_LOOP_31_5  | ../compute_row_operations.cpp:31:22 |            |                                                |
++--------------+----------+-------------------------------------+-----------+--------------+--------+------------------+-------------------------------------+------------+------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------------------------------------------+-----+--------+---------------------+-----------+--------------------------+---------+
+| Name                                                                | DSP | Pragma | Variable            | Op        | Impl                     | Latency |
++---------------------------------------------------------------------+-----+--------+---------------------+-----------+--------------------------+---------+
+| + compute_row_operations                                            | 45  |        |                     |           |                          |         |
+|  + compute_row_operations_Pipeline_VITIS_LOOP_15_1_VITIS_LOOP_17_2  | 0   |        |                     |           |                          |         |
+|    icmp_ln15_fu_291_p2                                              |     |        | icmp_ln15           | seteq     | auto                     | 0       |
+|    add_ln15_fu_297_p2                                               |     |        | add_ln15            | add       | fabric                   | 0       |
+|    icmp_ln17_fu_306_p2                                              |     |        | icmp_ln17           | seteq     | auto                     | 0       |
+|    select_ln15_fu_312_p3                                            |     |        | select_ln15         | select    | auto_sel                 | 0       |
+|    select_ln15_1_fu_374_p3                                          |     |        | select_ln15_1       | select    | auto_sel                 | 0       |
+|    add_ln15_1_fu_381_p2                                             |     |        | add_ln15_1          | add       | fabric                   | 0       |
+|    select_ln15_2_fu_387_p3                                          |     |        | select_ln15_2       | select    | auto_sel                 | 0       |
+|    add_ln17_fu_346_p2                                               |     |        | add_ln17            | add       | fabric                   | 0       |
+|  + compute_row_operations_Pipeline_VITIS_LOOP_23_3_VITIS_LOOP_25_4  | 0   |        |                     |           |                          |         |
+|    icmp_ln23_fu_293_p2                                              |     |        | icmp_ln23           | seteq     | auto                     | 0       |
+|    add_ln23_fu_299_p2                                               |     |        | add_ln23            | add       | fabric                   | 0       |
+|    icmp_ln25_fu_308_p2                                              |     |        | icmp_ln25           | seteq     | auto                     | 0       |
+|    select_ln23_fu_314_p3                                            |     |        | select_ln23         | select    | auto_sel                 | 0       |
+|    select_ln23_1_fu_376_p3                                          |     |        | select_ln23_1       | select    | auto_sel                 | 0       |
+|    add_ln23_1_fu_383_p2                                             |     |        | add_ln23_1          | add       | fabric                   | 0       |
+|    select_ln23_2_fu_389_p3                                          |     |        | select_ln23_2       | select    | auto_sel                 | 0       |
+|    add_ln25_fu_348_p2                                               |     |        | add_ln25            | add       | fabric                   | 0       |
+|  + compute_row_operations_Pipeline_VITIS_LOOP_31_5                  | 0   |        |                     |           |                          |         |
+|    icmp_ln31_fu_110_p2                                              |     |        | icmp_ln31           | seteq     | auto                     | 0       |
+|    add_ln31_fu_116_p2                                               |     |        | add_ln31            | add       | fabric                   | 0       |
+|  + compute_row_operations_Pipeline_VITIS_LOOP_37_6                  | 45  |        |                     |           |                          |         |
+|    cmp61_9_fu_963_p2                                                |     |        | cmp61_9             | seteq     | auto                     | 0       |
+|    cmp61_8_fu_969_p2                                                |     |        | cmp61_8             | seteq     | auto                     | 0       |
+|    cmp61_7_fu_975_p2                                                |     |        | cmp61_7             | seteq     | auto                     | 0       |
+|    cmp61_6_fu_981_p2                                                |     |        | cmp61_6             | seteq     | auto                     | 0       |
+|    cmp61_5_fu_987_p2                                                |     |        | cmp61_5             | seteq     | auto                     | 0       |
+|    cmp61_4_fu_993_p2                                                |     |        | cmp61_4             | seteq     | auto                     | 0       |
+|    cmp61_3_fu_999_p2                                                |     |        | cmp61_3             | seteq     | auto                     | 0       |
+|    cmp61_2_fu_1005_p2                                               |     |        | cmp61_2             | seteq     | auto                     | 0       |
+|    cmp61_1_fu_1011_p2                                               |     |        | cmp61_1             | seteq     | auto                     | 0       |
+|    cmp61_fu_1017_p2                                                 |     |        | cmp61               | seteq     | auto                     | 0       |
+|    icmp_ln37_fu_1031_p2                                             |     |        | icmp_ln37           | seteq     | auto                     | 0       |
+|    add_ln37_fu_1037_p2                                              |     |        | add_ln37            | add       | fabric                   | 0       |
+|    icmp_ln38_fu_1062_p2                                             |     |        | icmp_ln38           | seteq     | auto                     | 0       |
+|    icmp_ln55_fu_1104_p2                                             |     |        | icmp_ln55           | setne     | auto                     | 0       |
+|    icmp_ln55_1_fu_1110_p2                                           |     |        | icmp_ln55_1         | seteq     | auto                     | 0       |
+|    or_ln55_fu_1165_p2                                               |     |        | or_ln55             | or        | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U58                                  |     |        | tmp_12              | fcmp      | auto                     | 1       |
+|    and_ln55_fu_1169_p2                                              |     |        | and_ln55            | and       | auto                     | 0       |
+|    and_ln54_fu_1174_p2                                              |     |        | and_ln54            | and       | auto                     | 0       |
+|    fpext_32ns_64_2_no_dsp_1_U53                                     |     |        | conv_i1             | fpext     | auto                     | 1       |
+|    sign_minpos_fu_1511_p2                                           |     |        | sign_minpos         | and       | auto                     | 0       |
+|    min1_20_fu_1192_p3                                               |     |        | min1_20             | select    | auto_sel                 | 0       |
+|    minpos_fu_3229_p2                                                |     |        | minpos              | xor       | auto                     | 0       |
+|    minpos_10_fu_3682_p2                                             |     |        | select_ln661        | select    | auto_sel                 | 0       |
+|    icmp_ln55_2_fu_1147_p2                                           |     |        | icmp_ln55_2         | setne     | auto                     | 0       |
+|    icmp_ln55_3_fu_1153_p2                                           |     |        | icmp_ln55_3         | seteq     | auto                     | 0       |
+|    or_ln55_1_fu_1159_p2                                             |     |        | or_ln55_1           | or        | auto                     | 0       |
+|    icmp_ln55_4_fu_1265_p2                                           |     |        | icmp_ln55_4         | setne     | auto                     | 0       |
+|    icmp_ln55_5_fu_1271_p2                                           |     |        | icmp_ln55_5         | seteq     | auto                     | 0       |
+|    or_ln55_2_fu_1277_p2                                             |     |        | or_ln55_2           | or        | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U58                                  |     |        | tmp_15              | fcmp      | auto                     | 1       |
+|    and_ln55_1_fu_1283_p2                                            |     |        | and_ln55_1          | and       | auto                     | 0       |
+|    fpext_32ns_64_2_no_dsp_1_U54                                     |     |        | conv_i52_1          | fpext     | auto                     | 1       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U59                                  |     |        | tmp_16              | fcmp      | auto                     | 1       |
+|    and_ln60_fu_1288_p2                                              |     |        | and_ln60            | and       | auto                     | 0       |
+|    min2_3_fu_1325_p6                                                |     |        | min2_2              | select    | auto_sel                 | 0       |
+|    and_ln55_2_fu_1299_p2                                            |     |        | and_ln55_2          | and       | auto                     | 0       |
+|    and_ln55_3_fu_1305_p2                                            |     |        | and_ln55_3          | and       | auto                     | 0       |
+|    sign_minpos_2_fu_3242_p3                                         |     |        | sign_minpos_2       | select    | auto_sel                 | 0       |
+|    xor_ln54_fu_1311_p2                                              |     |        | xor_ln54            | xor       | auto                     | 0       |
+|    sparsemux_7_2_32_1_1_U72                                         |     |        | min2_3              | sparsemux | onehotencoding_realdef   | 0       |
+|    min2_fu_1345_p3                                                  |     |        | min2                | select    | auto_sel                 | 0       |
+|    sext_ln661_1_fu_3247_p3                                          |     |        | sext_ln661_1        | select    | auto_sel                 | 0       |
+|    empty_fu_3254_p2                                                 |     |        | empty               | or        | auto                     | 0       |
+|    minpos_1_fu_3259_p3                                              |     |        | minpos_1            | select    | auto_sel                 | 0       |
+|    row_sign_1_fu_1352_p2                                            |     |        | row_sign_1          | xor       | auto                     | 0       |
+|    icmp_ln55_6_fu_1387_p2                                           |     |        | icmp_ln55_6         | setne     | auto                     | 0       |
+|    icmp_ln55_7_fu_1393_p2                                           |     |        | icmp_ln55_7         | seteq     | auto                     | 0       |
+|    or_ln55_3_fu_1399_p2                                             |     |        | or_ln55_3           | or        | auto                     | 0       |
+|    icmp_ln55_8_fu_1532_p2                                           |     |        | icmp_ln55_8         | setne     | auto                     | 0       |
+|    icmp_ln55_9_fu_1538_p2                                           |     |        | icmp_ln55_9         | seteq     | auto                     | 0       |
+|    or_ln55_4_fu_1544_p2                                             |     |        | or_ln55_4           | or        | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U60                                  |     |        | tmp_19              | fcmp      | auto                     | 1       |
+|    fpext_32ns_64_2_no_dsp_1_U55                                     |     |        | conv_i52_2          | fpext     | auto                     | 1       |
+|    icmp_ln60_fu_1567_p2                                             |     |        | icmp_ln60           | setne     | auto                     | 0       |
+|    icmp_ln60_1_fu_1573_p2                                           |     |        | icmp_ln60_1         | seteq     | auto                     | 0       |
+|    or_ln60_fu_1579_p2                                               |     |        | or_ln60             | or        | auto                     | 0       |
+|    and_ln60_1_fu_1585_p2                                            |     |        | and_ln60_1          | and       | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U61                                  |     |        | tmp_21              | fcmp      | auto                     | 1       |
+|    and_ln60_2_fu_1590_p2                                            |     |        | and_ln60_2          | and       | auto                     | 0       |
+|    min2_7_fu_1631_p6                                                |     |        | min2_6              | select    | auto_sel                 | 0       |
+|    and_ln55_5_fu_1602_p2                                            |     |        | and_ln55_5          | and       | auto                     | 0       |
+|    and_ln55_4_fu_1607_p2                                            |     |        | and_ln55_4          | and       | auto                     | 0       |
+|    and_ln55_6_fu_1612_p2                                            |     |        | and_ln55_6          | and       | auto                     | 0       |
+|    sign_minpos_4_fu_3275_p3                                         |     |        | sign_minpos_4       | select    | auto_sel                 | 0       |
+|    xor_ln54_1_fu_1618_p2                                            |     |        | xor_ln54_1          | xor       | auto                     | 0       |
+|    sparsemux_7_2_32_1_1_U73                                         |     |        | min2_7              | sparsemux | onehotencoding_realdef   | 0       |
+|    min1_21_fu_1650_p3                                               |     |        | min1_21             | select    | auto_sel                 | 0       |
+|    minpos_2_fu_3281_p3                                              |     |        | minpos_2            | select    | auto_sel                 | 0       |
+|    row_sign_2_fu_1405_p2                                            |     |        | row_sign_2          | xor       | auto                     | 0       |
+|    icmp_ln55_10_fu_1688_p2                                          |     |        | icmp_ln55_10        | setne     | auto                     | 0       |
+|    icmp_ln55_11_fu_1694_p2                                          |     |        | icmp_ln55_11        | seteq     | auto                     | 0       |
+|    or_ln55_5_fu_1700_p2                                             |     |        | or_ln55_5           | or        | auto                     | 0       |
+|    icmp_ln55_12_fu_2024_p2                                          |     |        | icmp_ln55_12        | setne     | auto                     | 0       |
+|    icmp_ln55_13_fu_2030_p2                                          |     |        | icmp_ln55_13        | seteq     | auto                     | 0       |
+|    or_ln55_6_fu_2036_p2                                             |     |        | or_ln55_6           | or        | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U59                                  |     |        | tmp_24              | fcmp      | auto                     | 1       |
+|    fpext_32ns_64_2_no_dsp_1_U56                                     |     |        | conv_i52_3          | fpext     | auto                     | 1       |
+|    icmp_ln60_2_fu_2059_p2                                           |     |        | icmp_ln60_2         | setne     | auto                     | 0       |
+|    icmp_ln60_3_fu_2065_p2                                           |     |        | icmp_ln60_3         | seteq     | auto                     | 0       |
+|    or_ln60_1_fu_2071_p2                                             |     |        | or_ln60_1           | or        | auto                     | 0       |
+|    and_ln60_3_fu_2077_p2                                            |     |        | and_ln60_3          | and       | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U60                                  |     |        | tmp_26              | fcmp      | auto                     | 1       |
+|    and_ln60_4_fu_2082_p2                                            |     |        | and_ln60_4          | and       | auto                     | 0       |
+|    min2_11_fu_2123_p6                                               |     |        | min2_10             | select    | auto_sel                 | 0       |
+|    and_ln55_8_fu_2094_p2                                            |     |        | and_ln55_8          | and       | auto                     | 0       |
+|    and_ln55_7_fu_2099_p2                                            |     |        | and_ln55_7          | and       | auto                     | 0       |
+|    and_ln55_9_fu_2104_p2                                            |     |        | and_ln55_9          | and       | auto                     | 0       |
+|    sign_minpos_6_fu_3292_p3                                         |     |        | sign_minpos_6       | select    | auto_sel                 | 0       |
+|    xor_ln54_2_fu_2110_p2                                            |     |        | xor_ln54_2          | xor       | auto                     | 0       |
+|    sparsemux_7_2_32_1_1_U77                                         |     |        | min2_11             | sparsemux | onehotencoding_realdef   | 0       |
+|    min1_22_fu_2142_p3                                               |     |        | min1_22             | select    | auto_sel                 | 0       |
+|    minpos_3_fu_3298_p3                                              |     |        | minpos_3            | select    | auto_sel                 | 0       |
+|    row_sign_3_fu_1410_p2                                            |     |        | row_sign_3          | xor       | auto                     | 0       |
+|    icmp_ln55_14_fu_2180_p2                                          |     |        | icmp_ln55_14        | setne     | auto                     | 0       |
+|    icmp_ln55_15_fu_2186_p2                                          |     |        | icmp_ln55_15        | seteq     | auto                     | 0       |
+|    or_ln55_7_fu_2192_p2                                             |     |        | or_ln55_7           | or        | auto                     | 0       |
+|    icmp_ln55_16_fu_2275_p2                                          |     |        | icmp_ln55_16        | setne     | auto                     | 0       |
+|    icmp_ln55_17_fu_2281_p2                                          |     |        | icmp_ln55_17        | seteq     | auto                     | 0       |
+|    or_ln55_8_fu_2287_p2                                             |     |        | or_ln55_8           | or        | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U62                                  |     |        | tmp_29              | fcmp      | auto                     | 1       |
+|    fpext_32ns_64_2_no_dsp_1_U57                                     |     |        | conv_i52_4          | fpext     | auto                     | 1       |
+|    icmp_ln60_4_fu_2310_p2                                           |     |        | icmp_ln60_4         | setne     | auto                     | 0       |
+|    icmp_ln60_5_fu_2316_p2                                           |     |        | icmp_ln60_5         | seteq     | auto                     | 0       |
+|    or_ln60_2_fu_2322_p2                                             |     |        | or_ln60_2           | or        | auto                     | 0       |
+|    and_ln60_5_fu_2328_p2                                            |     |        | and_ln60_5          | and       | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U63                                  |     |        | tmp_31              | fcmp      | auto                     | 1       |
+|    and_ln60_6_fu_2333_p2                                            |     |        | and_ln60_6          | and       | auto                     | 0       |
+|    min2_15_fu_2374_p6                                               |     |        | min2_14             | select    | auto_sel                 | 0       |
+|    and_ln55_11_fu_2345_p2                                           |     |        | and_ln55_11         | and       | auto                     | 0       |
+|    and_ln55_10_fu_2350_p2                                           |     |        | and_ln55_10         | and       | auto                     | 0       |
+|    and_ln55_12_fu_2355_p2                                           |     |        | and_ln55_12         | and       | auto                     | 0       |
+|    sign_minpos_8_fu_3313_p3                                         |     |        | sign_minpos_8       | select    | auto_sel                 | 0       |
+|    xor_ln54_3_fu_2361_p2                                            |     |        | xor_ln54_3          | xor       | auto                     | 0       |
+|    sparsemux_7_2_32_1_1_U78                                         |     |        | min2_15             | sparsemux | onehotencoding_realdef   | 0       |
+|    min1_23_fu_2393_p3                                               |     |        | min1_23             | select    | auto_sel                 | 0       |
+|    minpos_4_fu_3319_p3                                              |     |        | minpos_4            | select    | auto_sel                 | 0       |
+|    row_sign_4_fu_1415_p2                                            |     |        | row_sign_4          | xor       | auto                     | 0       |
+|    icmp_ln55_18_fu_2431_p2                                          |     |        | icmp_ln55_18        | setne     | auto                     | 0       |
+|    icmp_ln55_19_fu_2437_p2                                          |     |        | icmp_ln55_19        | seteq     | auto                     | 0       |
+|    or_ln55_9_fu_2443_p2                                             |     |        | or_ln55_9           | or        | auto                     | 0       |
+|    icmp_ln55_20_fu_2466_p2                                          |     |        | icmp_ln55_20        | setne     | auto                     | 0       |
+|    icmp_ln55_21_fu_2472_p2                                          |     |        | icmp_ln55_21        | seteq     | auto                     | 0       |
+|    or_ln55_10_fu_2478_p2                                            |     |        | or_ln55_10          | or        | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U61                                  |     |        | tmp_34              | fcmp      | auto                     | 1       |
+|    fpext_32ns_64_2_no_dsp_1_U53                                     |     |        | conv_i52_5          | fpext     | auto                     | 1       |
+|    icmp_ln60_6_fu_2501_p2                                           |     |        | icmp_ln60_6         | setne     | auto                     | 0       |
+|    icmp_ln60_7_fu_2507_p2                                           |     |        | icmp_ln60_7         | seteq     | auto                     | 0       |
+|    or_ln60_3_fu_2513_p2                                             |     |        | or_ln60_3           | or        | auto                     | 0       |
+|    and_ln60_7_fu_2519_p2                                            |     |        | and_ln60_7          | and       | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U62                                  |     |        | tmp_36              | fcmp      | auto                     | 1       |
+|    and_ln60_8_fu_2524_p2                                            |     |        | and_ln60_8          | and       | auto                     | 0       |
+|    min2_19_fu_2565_p6                                               |     |        | min2_18             | select    | auto_sel                 | 0       |
+|    and_ln55_14_fu_2536_p2                                           |     |        | and_ln55_14         | and       | auto                     | 0       |
+|    and_ln55_13_fu_2541_p2                                           |     |        | and_ln55_13         | and       | auto                     | 0       |
+|    and_ln55_15_fu_2546_p2                                           |     |        | and_ln55_15         | and       | auto                     | 0       |
+|    sign_minpos_10_fu_3330_p3                                        |     |        | sign_minpos_10      | select    | auto_sel                 | 0       |
+|    xor_ln54_4_fu_2552_p2                                            |     |        | xor_ln54_4          | xor       | auto                     | 0       |
+|    sparsemux_7_2_32_1_1_U79                                         |     |        | min2_19             | sparsemux | onehotencoding_realdef   | 0       |
+|    min1_24_fu_2584_p3                                               |     |        | min1_24             | select    | auto_sel                 | 0       |
+|    minpos_5_fu_3336_p3                                              |     |        | minpos_5            | select    | auto_sel                 | 0       |
+|    row_sign_5_fu_1432_p2                                            |     |        | row_sign_5          | xor       | auto                     | 0       |
+|    icmp_ln55_22_fu_2622_p2                                          |     |        | icmp_ln55_22        | setne     | auto                     | 0       |
+|    icmp_ln55_23_fu_2628_p2                                          |     |        | icmp_ln55_23        | seteq     | auto                     | 0       |
+|    or_ln55_11_fu_2634_p2                                            |     |        | or_ln55_11          | or        | auto                     | 0       |
+|    icmp_ln55_24_fu_2657_p2                                          |     |        | icmp_ln55_24        | setne     | auto                     | 0       |
+|    icmp_ln55_25_fu_2663_p2                                          |     |        | icmp_ln55_25        | seteq     | auto                     | 0       |
+|    or_ln55_12_fu_2669_p2                                            |     |        | or_ln55_12          | or        | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U64                                  |     |        | tmp_39              | fcmp      | auto                     | 1       |
+|    fpext_32ns_64_2_no_dsp_1_U54                                     |     |        | conv_i52_6          | fpext     | auto                     | 1       |
+|    icmp_ln60_8_fu_2692_p2                                           |     |        | icmp_ln60_8         | setne     | auto                     | 0       |
+|    icmp_ln60_9_fu_2698_p2                                           |     |        | icmp_ln60_9         | seteq     | auto                     | 0       |
+|    or_ln60_4_fu_2704_p2                                             |     |        | or_ln60_4           | or        | auto                     | 0       |
+|    and_ln60_9_fu_2710_p2                                            |     |        | and_ln60_9          | and       | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U65                                  |     |        | tmp_41              | fcmp      | auto                     | 1       |
+|    and_ln60_10_fu_2715_p2                                           |     |        | and_ln60_10         | and       | auto                     | 0       |
+|    min2_23_fu_2756_p6                                               |     |        | min2_22             | select    | auto_sel                 | 0       |
+|    and_ln55_17_fu_2727_p2                                           |     |        | and_ln55_17         | and       | auto                     | 0       |
+|    and_ln55_16_fu_2732_p2                                           |     |        | and_ln55_16         | and       | auto                     | 0       |
+|    and_ln55_18_fu_2737_p2                                           |     |        | and_ln55_18         | and       | auto                     | 0       |
+|    sign_minpos_12_fu_3347_p3                                        |     |        | sign_minpos_12      | select    | auto_sel                 | 0       |
+|    xor_ln54_5_fu_2743_p2                                            |     |        | xor_ln54_5          | xor       | auto                     | 0       |
+|    sparsemux_7_2_32_1_1_U80                                         |     |        | min2_23             | sparsemux | onehotencoding_realdef   | 0       |
+|    min1_25_fu_2775_p3                                               |     |        | min1_25             | select    | auto_sel                 | 0       |
+|    minpos_6_fu_3353_p3                                              |     |        | minpos_6            | select    | auto_sel                 | 0       |
+|    row_sign_6_fu_1450_p2                                            |     |        | row_sign_6          | xor       | auto                     | 0       |
+|    icmp_ln55_26_fu_2813_p2                                          |     |        | icmp_ln55_26        | setne     | auto                     | 0       |
+|    icmp_ln55_27_fu_2819_p2                                          |     |        | icmp_ln55_27        | seteq     | auto                     | 0       |
+|    or_ln55_13_fu_2825_p2                                            |     |        | or_ln55_13          | or        | auto                     | 0       |
+|    icmp_ln55_28_fu_2848_p2                                          |     |        | icmp_ln55_28        | setne     | auto                     | 0       |
+|    icmp_ln55_29_fu_2854_p2                                          |     |        | icmp_ln55_29        | seteq     | auto                     | 0       |
+|    or_ln55_14_fu_2860_p2                                            |     |        | or_ln55_14          | or        | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U63                                  |     |        | tmp_44              | fcmp      | auto                     | 1       |
+|    fpext_32ns_64_2_no_dsp_1_U55                                     |     |        | conv_i52_7          | fpext     | auto                     | 1       |
+|    icmp_ln60_10_fu_2883_p2                                          |     |        | icmp_ln60_10        | setne     | auto                     | 0       |
+|    icmp_ln60_11_fu_2889_p2                                          |     |        | icmp_ln60_11        | seteq     | auto                     | 0       |
+|    or_ln60_5_fu_2895_p2                                             |     |        | or_ln60_5           | or        | auto                     | 0       |
+|    and_ln60_11_fu_2901_p2                                           |     |        | and_ln60_11         | and       | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U64                                  |     |        | tmp_46              | fcmp      | auto                     | 1       |
+|    and_ln60_12_fu_2906_p2                                           |     |        | and_ln60_12         | and       | auto                     | 0       |
+|    min2_27_fu_2947_p6                                               |     |        | min2_26             | select    | auto_sel                 | 0       |
+|    and_ln55_20_fu_2918_p2                                           |     |        | and_ln55_20         | and       | auto                     | 0       |
+|    and_ln55_19_fu_2923_p2                                           |     |        | and_ln55_19         | and       | auto                     | 0       |
+|    and_ln55_21_fu_2928_p2                                           |     |        | and_ln55_21         | and       | auto                     | 0       |
+|    sign_minpos_14_fu_3364_p3                                        |     |        | sign_minpos_14      | select    | auto_sel                 | 0       |
+|    xor_ln54_6_fu_2934_p2                                            |     |        | xor_ln54_6          | xor       | auto                     | 0       |
+|    sparsemux_7_2_32_1_1_U81                                         |     |        | min2_27             | sparsemux | onehotencoding_realdef   | 0       |
+|    min1_26_fu_2966_p3                                               |     |        | min1_26             | select    | auto_sel                 | 0       |
+|    minpos_7_fu_3370_p3                                              |     |        | minpos_7            | select    | auto_sel                 | 0       |
+|    row_sign_7_fu_1706_p2                                            |     |        | row_sign_7          | xor       | auto                     | 0       |
+|    icmp_ln55_30_fu_3004_p2                                          |     |        | icmp_ln55_30        | setne     | auto                     | 0       |
+|    icmp_ln55_31_fu_3010_p2                                          |     |        | icmp_ln55_31        | seteq     | auto                     | 0       |
+|    or_ln55_15_fu_3016_p2                                            |     |        | or_ln55_15          | or        | auto                     | 0       |
+|    icmp_ln55_32_fu_3039_p2                                          |     |        | icmp_ln55_32        | setne     | auto                     | 0       |
+|    icmp_ln55_33_fu_3045_p2                                          |     |        | icmp_ln55_33        | seteq     | auto                     | 0       |
+|    or_ln55_16_fu_3051_p2                                            |     |        | or_ln55_16          | or        | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U66                                  |     |        | tmp_49              | fcmp      | auto                     | 1       |
+|    fpext_32ns_64_2_no_dsp_1_U56                                     |     |        | conv_i52_8          | fpext     | auto                     | 1       |
+|    icmp_ln60_12_fu_3074_p2                                          |     |        | icmp_ln60_12        | setne     | auto                     | 0       |
+|    icmp_ln60_13_fu_3080_p2                                          |     |        | icmp_ln60_13        | seteq     | auto                     | 0       |
+|    or_ln60_6_fu_3086_p2                                             |     |        | or_ln60_6           | or        | auto                     | 0       |
+|    and_ln60_13_fu_3092_p2                                           |     |        | and_ln60_13         | and       | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U67                                  |     |        | tmp_51              | fcmp      | auto                     | 1       |
+|    and_ln60_14_fu_3097_p2                                           |     |        | and_ln60_14         | and       | auto                     | 0       |
+|    min2_31_fu_3138_p6                                               |     |        | min2_30             | select    | auto_sel                 | 0       |
+|    and_ln55_23_fu_3109_p2                                           |     |        | and_ln55_23         | and       | auto                     | 0       |
+|    and_ln55_22_fu_3114_p2                                           |     |        | and_ln55_22         | and       | auto                     | 0       |
+|    and_ln55_24_fu_3119_p2                                           |     |        | and_ln55_24         | and       | auto                     | 0       |
+|    sign_minpos_16_fu_3381_p3                                        |     |        | sign_minpos_16      | select    | auto_sel                 | 0       |
+|    xor_ln54_7_fu_3125_p2                                            |     |        | xor_ln54_7          | xor       | auto                     | 0       |
+|    sparsemux_7_2_32_1_1_U82                                         |     |        | min2_31             | sparsemux | onehotencoding_realdef   | 0       |
+|    min1_27_fu_3157_p3                                               |     |        | min1_27             | select    | auto_sel                 | 0       |
+|    minpos_8_fu_3387_p3                                              |     |        | minpos_8            | select    | auto_sel                 | 0       |
+|    row_sign_8_fu_1710_p2                                            |     |        | row_sign_8          | xor       | auto                     | 0       |
+|    icmp_ln55_34_fu_3195_p2                                          |     |        | icmp_ln55_34        | setne     | auto                     | 0       |
+|    icmp_ln55_35_fu_3201_p2                                          |     |        | icmp_ln55_35        | seteq     | auto                     | 0       |
+|    or_ln55_17_fu_3207_p2                                            |     |        | or_ln55_17          | or        | auto                     | 0       |
+|    icmp_ln55_36_fu_3411_p2                                          |     |        | icmp_ln55_36        | setne     | auto                     | 0       |
+|    icmp_ln55_37_fu_3417_p2                                          |     |        | icmp_ln55_37        | seteq     | auto                     | 0       |
+|    or_ln55_18_fu_3423_p2                                            |     |        | or_ln55_18          | or        | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U65                                  |     |        | tmp_54              | fcmp      | auto                     | 1       |
+|    fpext_32ns_64_2_no_dsp_1_U57                                     |     |        | conv_i52_9          | fpext     | auto                     | 1       |
+|    icmp_ln60_14_fu_3446_p2                                          |     |        | icmp_ln60_14        | setne     | auto                     | 0       |
+|    icmp_ln60_15_fu_3452_p2                                          |     |        | icmp_ln60_15        | seteq     | auto                     | 0       |
+|    or_ln60_7_fu_3458_p2                                             |     |        | or_ln60_7           | or        | auto                     | 0       |
+|    and_ln60_15_fu_3464_p2                                           |     |        | and_ln60_15         | and       | auto                     | 0       |
+|    fcmp_32ns_32ns_1_2_no_dsp_1_U66                                  |     |        | tmp_56              | fcmp      | auto                     | 1       |
+|    and_ln60_16_fu_3469_p2                                           |     |        | and_ln60_16         | and       | auto                     | 0       |
+|    min2_35_fu_3517_p6                                               |     |        | min2_34             | select    | auto_sel                 | 0       |
+|    and_ln55_26_fu_3481_p2                                           |     |        | and_ln55_26         | and       | auto                     | 0       |
+|    and_ln55_25_fu_3486_p2                                           |     |        | and_ln55_25         | and       | auto                     | 0       |
+|    and_ln55_27_fu_3491_p2                                           |     |        | and_ln55_27         | and       | auto                     | 0       |
+|    sign_minpos_19_fu_3549_p20                                       |     |        | sign_minpos_18      | select    | auto_sel                 | 0       |
+|    xor_ln54_8_fu_3504_p2                                            |     |        | xor_ln54_8          | xor       | auto                     | 0       |
+|    sparsemux_7_2_32_1_1_U84                                         |     |        | min2_35             | sparsemux | onehotencoding_realdef   | 0       |
+|    min1_19_fu_3644_p20                                              |     |        | min1                | select    | auto_sel                 | 0       |
+|    minpos_10_fu_3682_p20                                            |     |        | minpos_9            | select    | auto_sel                 | 0       |
+|    row_sign_10_fu_1838_p20                                          |     |        | row_sign_9          | xor       | auto                     | 0       |
+|    sel_tmp90_fu_1720_p2                                             |     |        | sel_tmp90           | xor       | auto                     | 0       |
+|    sel_tmp91_fu_1725_p2                                             |     |        | sel_tmp91           | and       | auto                     | 0       |
+|    sel_tmp94_demorgan_fu_1492_p2                                    |     |        | sel_tmp94_demorgan  | or        | auto                     | 0       |
+|    sel_tmp94_fu_1730_p2                                             |     |        | sel_tmp94           | xor       | auto                     | 0       |
+|    sel_tmp95_fu_1735_p2                                             |     |        | sel_tmp95           | and       | auto                     | 0       |
+|    sel_tmp100_demorgan_fu_1496_p2                                   |     |        | sel_tmp100_demorgan | or        | auto                     | 0       |
+|    sel_tmp100_fu_1740_p2                                            |     |        | sel_tmp100          | xor       | auto                     | 0       |
+|    sel_tmp101_fu_1745_p2                                            |     |        | sel_tmp101          | and       | auto                     | 0       |
+|    sel_tmp108_demorgan_fu_1501_p2                                   |     |        | sel_tmp108_demorgan | or        | auto                     | 0       |
+|    sel_tmp108_fu_1750_p2                                            |     |        | sel_tmp108          | xor       | auto                     | 0       |
+|    sel_tmp109_fu_1755_p2                                            |     |        | sel_tmp109          | and       | auto                     | 0       |
+|    sel_tmp118_demorgan_fu_1506_p2                                   |     |        | sel_tmp118_demorgan | or        | auto                     | 0       |
+|    sel_tmp118_fu_1760_p2                                            |     |        | sel_tmp118          | xor       | auto                     | 0       |
+|    sel_tmp119_fu_1765_p2                                            |     |        | sel_tmp119          | and       | auto                     | 0       |
+|    sel_tmp130_demorgan_fu_1770_p2                                   |     |        | sel_tmp130_demorgan | or        | auto                     | 0       |
+|    sel_tmp130_fu_1774_p2                                            |     |        | sel_tmp130          | xor       | auto                     | 0       |
+|    sel_tmp131_fu_1780_p2                                            |     |        | sel_tmp131          | and       | auto                     | 0       |
+|    sel_tmp144_demorgan_fu_1785_p2                                   |     |        | sel_tmp144_demorgan | or        | auto                     | 0       |
+|    sel_tmp144_fu_1790_p2                                            |     |        | sel_tmp144          | xor       | auto                     | 0       |
+|    sel_tmp145_fu_1796_p2                                            |     |        | sel_tmp145          | and       | auto                     | 0       |
+|    sel_tmp160_demorgan_fu_1801_p2                                   |     |        | sel_tmp160_demorgan | or        | auto                     | 0       |
+|    sel_tmp160_fu_1806_p2                                            |     |        | sel_tmp160          | xor       | auto                     | 0       |
+|    sel_tmp161_fu_1812_p2                                            |     |        | sel_tmp161          | and       | auto                     | 0       |
+|    sparsemux_21_9_1_1_1_U85                                         |     |        | sign_minpos_19      | sparsemux | onehotencoding_realdef   | 0       |
+|    sparsemux_21_9_1_1_1_U74                                         |     |        | row_sign_10         | sparsemux | onehotencoding_realdef   | 0       |
+|    sparsemux_21_9_32_1_1_U86                                        |     |        | min2_08_ph          | sparsemux | onehotencoding_realdef   | 0       |
+|    sparsemux_21_9_32_1_1_U87                                        |     |        | min1_19             | sparsemux | onehotencoding_realdef   | 0       |
+|    sparsemux_21_9_5_1_1_U88                                         |     |        | minpos_10           | sparsemux | onehotencoding_realdef   | 0       |
+|    sparsemux_7_2_1_1_1_U68                                          |     |        | tmp_s               | sparsemux | onehotencoding_realdef   | 0       |
+|    xor_ln77_fu_1879_p2                                              |     |        | xor_ln77            | xor       | auto                     | 0       |
+|    xor_ln77_1_fu_1884_p2                                            |     |        | xor_ln77_1          | xor       | auto                     | 0       |
+|    uitofp_32ns_32_4_no_dsp_1_U47                                    |     |        | conv_i2             | uitofp    | auto                     | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U36                                | 3   |        | mul_i               | fmul      | maxdsp                   | 2       |
+|    fsub_32ns_32ns_32_4_full_dsp_1_U30                               | 2   |        | sign                | fsub      | fulldsp                  | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U40                                | 3   |        | mul                 | fmul      | maxdsp                   | 2       |
+|    sparsemux_7_2_1_1_1_U69                                          |     |        | tmp_1               | sparsemux | onehotencoding_realdef   | 0       |
+|    xor_ln77_2_fu_1895_p2                                            |     |        | xor_ln77_2          | xor       | auto                     | 0       |
+|    xor_ln77_3_fu_1900_p2                                            |     |        | xor_ln77_3          | xor       | auto                     | 0       |
+|    uitofp_32ns_32_4_no_dsp_1_U48                                    |     |        | conv_i25_1          | uitofp    | auto                     | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U37                                | 3   |        | mul_i_1             | fmul      | maxdsp                   | 2       |
+|    fsub_32ns_32ns_32_4_full_dsp_1_U31                               | 2   |        | sign_1              | fsub      | fulldsp                  | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U41                                | 3   |        | mul_1               | fmul      | maxdsp                   | 2       |
+|    sparsemux_7_2_1_1_1_U70                                          |     |        | tmp_2               | sparsemux | onehotencoding_realdef   | 0       |
+|    xor_ln77_4_fu_1911_p2                                            |     |        | xor_ln77_4          | xor       | auto                     | 0       |
+|    xor_ln77_5_fu_1916_p2                                            |     |        | xor_ln77_5          | xor       | auto                     | 0       |
+|    uitofp_32ns_32_4_no_dsp_1_U49                                    |     |        | conv_i25_2          | uitofp    | auto                     | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U38                                | 3   |        | mul_i_2             | fmul      | maxdsp                   | 2       |
+|    fsub_32ns_32ns_32_4_full_dsp_1_U32                               | 2   |        | sign_2              | fsub      | fulldsp                  | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U42                                | 3   |        | mul_2               | fmul      | maxdsp                   | 2       |
+|    sparsemux_7_2_1_1_1_U71                                          |     |        | tmp_3               | sparsemux | onehotencoding_realdef   | 0       |
+|    xor_ln77_6_fu_1927_p2                                            |     |        | xor_ln77_6          | xor       | auto                     | 0       |
+|    xor_ln77_7_fu_1932_p2                                            |     |        | xor_ln77_7          | xor       | auto                     | 0       |
+|    uitofp_32ns_32_4_no_dsp_1_U50                                    |     |        | conv_i25_3          | uitofp    | auto                     | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U39                                | 3   |        | mul_i_3             | fmul      | maxdsp                   | 2       |
+|    fsub_32ns_32ns_32_4_full_dsp_1_U33                               | 2   |        | sign_3              | fsub      | fulldsp                  | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U43                                | 3   |        | mul_3               | fmul      | maxdsp                   | 2       |
+|    sparsemux_7_2_1_1_1_U75                                          |     |        | tmp_4               | sparsemux | onehotencoding_realdef   | 0       |
+|    xor_ln77_8_fu_1959_p2                                            |     |        | xor_ln77_8          | xor       | auto                     | 0       |
+|    xor_ln77_9_fu_1964_p2                                            |     |        | xor_ln77_9          | xor       | auto                     | 0       |
+|    uitofp_32ns_32_4_no_dsp_1_U51                                    |     |        | conv_i25_4          | uitofp    | auto                     | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U40                                | 3   |        | mul_i_4             | fmul      | maxdsp                   | 2       |
+|    fsub_32ns_32ns_32_4_full_dsp_1_U34                               | 2   |        | sign_4              | fsub      | fulldsp                  | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U44                                | 3   |        | mul_4               | fmul      | maxdsp                   | 2       |
+|    sparsemux_7_2_1_1_1_U76                                          |     |        | tmp_5               | sparsemux | onehotencoding_realdef   | 0       |
+|    xor_ln77_10_fu_1991_p2                                           |     |        | xor_ln77_10         | xor       | auto                     | 0       |
+|    xor_ln77_11_fu_1996_p2                                           |     |        | xor_ln77_11         | xor       | auto                     | 0       |
+|    uitofp_32ns_32_4_no_dsp_1_U52                                    |     |        | conv_i25_5          | uitofp    | auto                     | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U41                                | 3   |        | mul_i_5             | fmul      | maxdsp                   | 2       |
+|    fsub_32ns_32ns_32_4_full_dsp_1_U35                               | 2   |        | sign_5              | fsub      | fulldsp                  | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U45                                | 3   |        | mul_5               | fmul      | maxdsp                   | 2       |
+|    sparsemux_7_2_1_1_1_U68                                          |     |        | tmp_6               | sparsemux | onehotencoding_realdef   | 0       |
+|    xor_ln77_12_fu_2198_p2                                           |     |        | xor_ln77_12         | xor       | auto                     | 0       |
+|    xor_ln77_13_fu_2203_p2                                           |     |        | xor_ln77_13         | xor       | auto                     | 0       |
+|    uitofp_32ns_32_4_no_dsp_1_U47                                    |     |        | conv_i25_6          | uitofp    | auto                     | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U36                                | 3   |        | mul_i_6             | fmul      | maxdsp                   | 2       |
+|    fsub_32ns_32ns_32_4_full_dsp_1_U30                               | 2   |        | sign_6              | fsub      | fulldsp                  | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U42                                | 3   |        | mul_6               | fmul      | maxdsp                   | 2       |
+|    sparsemux_7_2_1_1_1_U69                                          |     |        | tmp_7               | sparsemux | onehotencoding_realdef   | 0       |
+|    xor_ln77_14_fu_2213_p2                                           |     |        | xor_ln77_14         | xor       | auto                     | 0       |
+|    xor_ln77_15_fu_2218_p2                                           |     |        | xor_ln77_15         | xor       | auto                     | 0       |
+|    uitofp_32ns_32_4_no_dsp_1_U48                                    |     |        | conv_i25_7          | uitofp    | auto                     | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U37                                | 3   |        | mul_i_7             | fmul      | maxdsp                   | 2       |
+|    fsub_32ns_32ns_32_4_full_dsp_1_U31                               | 2   |        | sign_7              | fsub      | fulldsp                  | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U43                                | 3   |        | mul_7               | fmul      | maxdsp                   | 2       |
+|    sparsemux_7_2_1_1_1_U70                                          |     |        | tmp_9               | sparsemux | onehotencoding_realdef   | 0       |
+|    xor_ln77_16_fu_2228_p2                                           |     |        | xor_ln77_16         | xor       | auto                     | 0       |
+|    xor_ln77_17_fu_2233_p2                                           |     |        | xor_ln77_17         | xor       | auto                     | 0       |
+|    uitofp_32ns_32_4_no_dsp_1_U49                                    |     |        | conv_i25_8          | uitofp    | auto                     | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U38                                | 3   |        | mul_i_8             | fmul      | maxdsp                   | 2       |
+|    fsub_32ns_32ns_32_4_full_dsp_1_U32                               | 2   |        | sign_8              | fsub      | fulldsp                  | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U44                                | 3   |        | mul_8               | fmul      | maxdsp                   | 2       |
+|    sparsemux_7_2_1_1_1_U71                                          |     |        | tmp_10              | sparsemux | onehotencoding_realdef   | 0       |
+|    xor_ln77_18_fu_2243_p2                                           |     |        | xor_ln77_18         | xor       | auto                     | 0       |
+|    xor_ln77_19_fu_2248_p2                                           |     |        | xor_ln77_19         | xor       | auto                     | 0       |
+|    uitofp_32ns_32_4_no_dsp_1_U50                                    |     |        | conv_i25_9          | uitofp    | auto                     | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U39                                | 3   |        | mul_i_9             | fmul      | maxdsp                   | 2       |
+|    fsub_32ns_32ns_32_4_full_dsp_1_U33                               | 2   |        | sign_9              | fsub      | fulldsp                  | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U45                                | 3   |        | mul_9               | fmul      | maxdsp                   | 2       |
+|    sparsemux_7_2_1_1_1_U83                                          |     |        | tmp_11              | sparsemux | onehotencoding_realdef   | 0       |
+|    xor_ln85_fu_3739_p2                                              |     |        | xor_ln85            | xor       | auto                     | 0       |
+|    xor_ln85_1_fu_3744_p2                                            |     |        | xor_ln85_1          | xor       | auto                     | 0       |
+|    uitofp_32ns_32_4_no_dsp_1_U51                                    |     |        | conv_i              | uitofp    | auto                     | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U46                                | 3   |        | mul1                | fmul      | maxdsp                   | 2       |
+|    fsub_32ns_32ns_32_4_full_dsp_1_U34                               | 2   |        | sub                 | fsub      | fulldsp                  | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U46                                | 3   |        | mul2                | fmul      | maxdsp                   | 2       |
+|  + compute_row_operations_Pipeline_VITIS_LOOP_87_9_VITIS_LOOP_89_10 | 0   |        |                     |           |                          |         |
+|    icmp_ln87_fu_329_p2                                              |     |        | icmp_ln87           | seteq     | auto                     | 0       |
+|    add_ln87_fu_335_p2                                               |     |        | add_ln87            | add       | fabric                   | 0       |
+|    icmp_ln89_fu_347_p2                                              |     |        | icmp_ln89           | seteq     | auto                     | 0       |
+|    select_ln87_fu_353_p3                                            |     |        | select_ln87         | select    | auto_sel                 | 0       |
+|    select_ln87_1_fu_469_p3                                          |     |        | select_ln87_1       | select    | auto_sel                 | 0       |
+|    add_ln87_1_fu_361_p2                                             |     |        | add_ln87_1          | add       | fabric                   | 0       |
+|    select_ln87_2_fu_367_p3                                          |     |        | select_ln87_2       | select    | auto_sel                 | 0       |
+|    first_iter_2_fu_375_p2                                           |     |        | first_iter_2        | seteq     | auto                     | 0       |
+|    sparsemux_21_4_32_1_1_U124                                       |     |        | tmp_8               | sparsemux | compactencoding_dontcare | 0       |
+|    add_ln89_fu_395_p2                                               |     |        | add_ln89            | add       | fabric                   | 0       |
+|    select_ln89_fu_568_p3                                            |     |        | select_ln89         | select    | auto_sel                 | 0       |
++---------------------------------------------------------------------+-----+--------+---------------------+-----------+--------------------------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++--------------------------+---------------+-----------+------+------+--------+------------------+------+---------+------------------+
+| Name                     | Usage         | Type      | BRAM | URAM | Pragma | Variable         | Impl | Latency | Bitwidth, Depth, |
+|                          |               |           |      |      |        |                  |      |         | Banks            |
++--------------------------+---------------+-----------+------+------+--------+------------------+------+---------+------------------+
+| + compute_row_operations |               |           | 8    | 0    |        |                  |      |         |                  |
+|   control_s_axi_U        | interface     | s_axilite |      |      |        |                  |      |         |                  |
+|   gmem0_m_axi_U          | interface     | m_axi     | 4    |      |        |                  |      |         |                  |
+|   gmem1_m_axi_U          | interface     | m_axi     | 2    |      |        |                  |      |         |                  |
+|   gmem2_m_axi_U          | interface     | m_axi     | 2    |      |        |                  |      |         |                  |
+|   L_cache_U              | ram_2p array  |           |      |      |        | L_cache          | auto | 1       | 32, 3, 1         |
+|   L_cache_1_U            | ram_2p array  |           |      |      |        | L_cache_1        | auto | 1       | 32, 3, 1         |
+|   L_cache_2_U            | ram_2p array  |           |      |      |        | L_cache_2        | auto | 1       | 32, 3, 1         |
+|   L_cache_3_U            | ram_2p array  |           |      |      |        | L_cache_3        | auto | 1       | 32, 3, 1         |
+|   L_cache_4_U            | ram_2p array  |           |      |      |        | L_cache_4        | auto | 1       | 32, 3, 1         |
+|   L_cache_5_U            | ram_2p array  |           |      |      |        | L_cache_5        | auto | 1       | 32, 3, 1         |
+|   L_cache_6_U            | ram_t2p array |           |      |      |        | L_cache_6        | auto | 1       | 32, 3, 1         |
+|   L_cache_7_U            | ram_t2p array |           |      |      |        | L_cache_7        | auto | 1       | 32, 3, 1         |
+|   L_cache_8_U            | ram_t2p array |           |      |      |        | L_cache_8        | auto | 1       | 32, 3, 1         |
+|   L_cache_9_U            | ram_t2p array |           |      |      |        | L_cache_9        | auto | 1       | 32, 3, 1         |
+|   non_zero_cache_U       | ram_1p array  |           |      |      |        | non_zero_cache   | auto | 1       | 1, 3, 1          |
+|   non_zero_cache_1_U     | ram_1p array  |           |      |      |        | non_zero_cache_1 | auto | 1       | 1, 3, 1          |
+|   non_zero_cache_2_U     | ram_1p array  |           |      |      |        | non_zero_cache_2 | auto | 1       | 1, 3, 1          |
+|   non_zero_cache_3_U     | ram_1p array  |           |      |      |        | non_zero_cache_3 | auto | 1       | 1, 3, 1          |
+|   non_zero_cache_4_U     | ram_1p array  |           |      |      |        | non_zero_cache_4 | auto | 1       | 1, 3, 1          |
+|   non_zero_cache_5_U     | ram_1p array  |           |      |      |        | non_zero_cache_5 | auto | 1       | 1, 3, 1          |
+|   non_zero_cache_6_U     | ram_1p array  |           |      |      |        | non_zero_cache_6 | auto | 1       | 1, 3, 1          |
+|   non_zero_cache_7_U     | ram_1p array  |           |      |      |        | non_zero_cache_7 | auto | 1       | 1, 3, 1          |
+|   non_zero_cache_8_U     | ram_1p array  |           |      |      |        | non_zero_cache_8 | auto | 1       | 1, 3, 1          |
+|   non_zero_cache_9_U     | ram_1p array  |           |      |      |        | non_zero_cache_9 | auto | 1       | 1, 3, 1          |
++--------------------------+---------------+-----------+------+------+--------+------------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+---------------------------------------+----------------------------------------------------------------------+
+| Type      | Options                               | Location                                                             |
++-----------+---------------------------------------+----------------------------------------------------------------------+
+| INTERFACE | mode=m_axi port=L bundle=gmem0        | ../compute_row_operations.cpp:8 in compute_row_operations, L         |
+| INTERFACE | mode=m_axi port=non_zero bundle=gmem1 | ../compute_row_operations.cpp:9 in compute_row_operations, non_zero  |
+| INTERFACE | mode=m_axi port=syndrome bundle=gmem2 | ../compute_row_operations.cpp:10 in compute_row_operations, syndrome |
++-----------+---------------------------------------+----------------------------------------------------------------------+
+
+

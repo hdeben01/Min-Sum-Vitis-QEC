@@ -1,0 +1,20 @@
+{
+  "0": {
+    "basicblocks": 104,
+    "calls": "",
+    "control_depth": 13,
+    "def_use_depth": 34,
+    "file": "compute_row_operations.cpp",
+    "fileloc": 5,
+    "instructions": 645,
+    "loads": {
+      "L": 52
+    },
+    "memory_accesses": 70,
+    "name": "compute_row_operations",
+    "stores": {
+      "L": 14
+    },
+    "total_instructions": 647
+  }
+}

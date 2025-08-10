@@ -1,0 +1,13 @@
+{
+  "name": "krnl_row_operations",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": [
+      "hls_config.cfg"
+    ],
+    "work_dir": "krnl_row_operations"
+  },
+  "useSysrootToolchain": false,
+  "template": "empty_hls_component"
+}
